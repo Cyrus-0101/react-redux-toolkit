@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import {
   increment,
   decrement,
@@ -15,8 +15,8 @@ interface CounterState {
 }
 
 const Counter = () => {
-  const count = useSelector((state: CounterState) => state.counter.count);
-  const dispatch = useDispatch();
+  const count = useAppSelector((state: CounterState) => state.counter.count);
+  const dispatch = useAppDispatch();
 
   const [incrementAmount, setIncrementAmount] = useState(0);
 
